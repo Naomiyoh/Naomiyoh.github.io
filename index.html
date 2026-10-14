@@ -40,7 +40,7 @@
   a { color: var(--accent); text-underline-offset: 3px; }
   a:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
   main, header, footer { max-width: 44rem; margin: 0 auto; padding: 0 1.5rem; }
-
+ 
   header { padding-top: 4rem; padding-bottom: 2rem; }
   h1 {
     font-family: var(--serif);
@@ -50,19 +50,24 @@
     letter-spacing: -0.01em;
   }
   .lede { font-size: 1.25rem; max-width: 34rem; margin: 0 0 1.5rem; }
+  .intro { display: flex; align-items: center; justify-content: space-between; gap: 2rem; }
+  .photo { width: 9rem; height: 9rem; border-radius: 50%; object-fit: cover; border: 1px solid var(--line); flex: none; }
+  .quicklinks { list-style: none; display: flex; flex-wrap: wrap; align-items: center; gap: 0.75rem 1.5rem; margin: 0 0 1.25rem; padding: 0; }
+  .quicklinks .button { background: var(--accent); color: var(--bg); padding: 0.5rem 1.1rem; border-radius: 4px; font-weight: 600; text-decoration: none; }
+  .quicklinks .button:hover { text-decoration: underline; }
   nav ul { list-style: none; display: flex; flex-wrap: wrap; gap: 0.5rem 1.5rem; margin: 0; padding: 0; }
   nav a { font-weight: 600; }
-
+ 
   section { padding: 2.25rem 0; border-top: 1px solid var(--line); }
   h2 { font-family: var(--serif); font-size: 1.75rem; margin: 0 0 1rem; }
   h3 { font-size: 1.0625rem; margin: 0; }
   p { margin: 0 0 1rem; max-width: 38rem; }
   .muted { color: var(--muted); }
-
-  dl.skills { margin: 0; display: grid; grid-template-columns: 8rem 1fr; gap: 0.5rem 1.25rem; }
+ 
+  dl.skills { margin: 0; display: grid; grid-template-columns: 11rem 1fr; gap: 0.5rem 1.25rem; }
   dl.skills dt { font-weight: 600; }
   dl.skills dd { margin: 0; }
-
+ 
   /* DineTrack receipt */
   .receipt {
     background: var(--paper);
@@ -78,15 +83,16 @@
   .receipt .rule { border: 0; border-top: 1px dashed var(--muted); margin: 0.75rem 0; }
   .receipt .title { font-weight: 700; text-align: center; margin-bottom: 0.25rem; }
   .receipt .center { text-align: center; }
-
+ 
   .jobs { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.25rem; }
   .jobs li { display: grid; grid-template-columns: 1fr auto; gap: 0.25rem 1rem; }
   .jobs .when { color: var(--muted); white-space: nowrap; }
   .jobs p { grid-column: 1 / -1; margin: 0; color: var(--muted); }
-
+ 
   footer { padding-top: 2rem; padding-bottom: 3rem; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.9375rem; }
-
+ 
   @media (max-width: 34rem) {
+    .intro { flex-direction: column-reverse; align-items: flex-start; }
     dl.skills { grid-template-columns: 1fr; gap: 0; }
     dl.skills dd { margin-bottom: 0.75rem; }
     .jobs li { grid-template-columns: 1fr; }
@@ -94,38 +100,49 @@
 </style>
 </head>
 <body>
-
+ 
 <header>
-  <h1>Naomi Yohannes</h1>
-  <p class="lede">Honours Computer Science student at Conestoga College in Kitchener, looking for a software co-op for Summer 2027.</p>
-  <nav aria-label="Main">
-    <ul>
-      <li><a href="#about">About</a></li>
-      <li><a href="#project">Project</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+  <div class="intro">
+    <div>
+      <h1>Naomi Yohannes</h1>
+      <p class="lede">Honours Computer Science student at Conestoga College with a strong foundation in software development, object-oriented programming, and problem solving. Seeking a Software Developer or Software Engineering Co-op position for Summer 2027 where I can apply my technical skills while continuing to grow as a developer.</p>
+      <ul class="quicklinks">
+        <li><a class="button" href="resume.pdf">View Resume</a></li>
+        <li><a href="https://www.linkedin.com/in/naomi-yohannes-ba77a4331">LinkedIn</a></li>
+        <li><a href="https://github.com/Naomiyoh">GitHub</a></li>
+      </ul>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+    <!-- Photo: upload a file named photo.jpg to your repository and it will appear here automatically. -->
+    <img class="photo" src="photo.jpg" alt="Photo of Naomi Yohannes" width="144" height="144" onerror="this.style.display='none'">
+  </div>
 </header>
-
+ 
 <main>
   <section id="about">
     <h2>About me</h2>
-    <p>I am studying Computer Science at Conestoga College and will graduate in April 2029. I have learned C, C++, and C#, and I am now learning JavaScript.</p>
-    <p>My goal is to find a way to help people while working in a field I am passionate about. Before college, I worked in customer service and administration, which taught me to listen carefully, communicate clearly, and work well with different kinds of people.</p>
-    <p>I use AI tools like Claude and ChatGPT to learn new concepts, test and correct my code, and get feedback on my work.</p>
-
+    <p>I am an Honours Computer Science student at Conestoga College, expected to graduate in April 2029. Through my coursework and projects, I have developed a strong foundation in programming, software development, and problem solving using C, C++, and C#. I am currently expanding my skills by learning JavaScript.</p>
+    <p>Before beginning my studies in Computer Science, I worked in customer service and administrative roles where I developed strong communication, organization, and teamwork skills. These experiences taught me how to collaborate effectively, adapt to new situations, and deliver excellent service in fast-paced environments.</p>
+    <p>I enjoy building practical solutions, learning new technologies, and using feedback to continuously improve my work. My goal is to find a way to help people while working in a field I am passionate about. I am currently seeking a Summer 2027 software co-op opportunity where I can contribute to meaningful projects while gaining industry experience.</p>
+ 
     <dl class="skills">
-      <dt>Languages</dt><dd>C, C++, C#, JavaScript (learning)</dd>
-      <dt>Tools</dt><dd>Visual Studio, VS Code, Git, GitHub, Microsoft Office Suite</dd>
-      <dt>Coursework</dt><dd>Data Structures and Algorithms, Object-Oriented Programming, Software Implementation and Unit Testing, Discrete Mathematics, Linear Algebra, Operating Systems and Security Fundamentals, Systems Analysis and Design, UX Design</dd>
+      <dt>Programming Languages</dt><dd>C, C++, C#, JavaScript (currently learning)</dd>
+      <dt>Tools &amp; Technologies</dt><dd>Visual Studio, VS Code, Git, GitHub, Microsoft Office Suite</dd>
+      <dt>Relevant Coursework</dt><dd>Data Structures and Algorithms, Object-Oriented Programming, Software Implementation and Unit Testing, Discrete Mathematics, Linear Algebra, Operating Systems and Security Fundamentals, Systems Analysis and Design, UX Design</dd>
     </dl>
   </section>
-
+ 
   <section id="project">
     <h2>DineTrack: restaurant order management system</h2>
-    <p>DineTrack is a menu-driven restaurant ordering program written in C. Customers browse the menu and build an order, and employees manage the menu and view sales reports. Our team of four split the program into separate modules for menus, orders, billing, receipts, files, and the user interface.</p>
-
+    <p>DineTrack is a restaurant order management system developed in C by a team of four students. The application allows customers to place orders while enabling employees to manage menu items, process transactions, generate receipts, and review sales reports. We split the program into separate modules for menus, orders, billing, receipts, files, and the user interface.</p>
+ 
     <div class="receipt" role="img" aria-label="Receipt listing my contributions to DineTrack: the User Interface module and the Receipt Generation module.">
       <div class="title">DINETRACK</div>
       <div class="center">Team project of four, 2026</div>
@@ -138,11 +155,12 @@
       <div class="row"><strong>Written in</strong><strong>C</strong></div>
       <div class="center" style="margin-top:0.75rem;">Thank you!</div>
     </div>
-
-    <p>I built the user interface and receipt generation modules. The user interface handles the customer and employee menus, checks that input is valid, and shows error and confirmation messages. The receipt module checks that an order is confirmed, then builds a formatted receipt from the order and billing information. We followed test-driven development, wrote test cases in Visual Studio, and documented each module in a team report.</p>
+ 
+    <p>My primary responsibility was developing the User Interface and Receipt Generation modules. The user interface provided separate customer and employee workflows, validated user input, and displayed confirmation and error messages. The receipt module verified completed orders and generated formatted receipts using order and billing information. We followed test-driven development, wrote test cases in Visual Studio, and documented each module in a team report.</p>
     <p><a href="https://github.com/alievaz06/restaurant-order-management-system">See the DineTrack code on GitHub</a></p>
+    <p class="muted">More projects will be added here as I progress through my program.</p>
   </section>
-
+ 
   <section id="experience">
     <h2>Experience and education</h2>
     <ul class="jobs">
@@ -151,7 +169,7 @@
       </li>
       <li>
         <h3>Part-time receptionist, Crosby Volkswagen</h3><span class="when">August 2026 to present</span>
-        <p>Greet visitors, answer phone calls, and direct inquiries to the right people.</p>
+        <p>Provide professional front-desk support by greeting visitors, answering and routing phone calls, processing payments and basic paperwork, and directing inquiries to the right people while keeping an organized workspace.</p>
       </li>
       <li>
         <h3>Sales associate, American Eagle</h3><span class="when">2025 to 2026</span>
@@ -163,29 +181,30 @@
       </li>
       <li>
         <h3>Administrative assistant and receptionist, Destiney Driving School</h3><span class="when">2019 to 2024</span>
-        <p>Scheduled appointments, managed inquiries, and put office procedures in place that improved efficiency.</p>
+        <p>Scheduled appointments, managed client inquiries and office inventory, compiled data, and implemented office procedures that improved efficiency and customer service.</p>
       </li>
       <li>
         <h3>Specialist High Skills Major in Information and Communication Technology, St. Marys Catholic High School</h3><span class="when">2020 to 2024</span>
       </li>
     </ul>
   </section>
-
+ 
   <section id="contact">
     <h2>Contact</h2>
-    <p>I would love to hear about co-op and internship opportunities.</p>
+    <p>I am actively seeking Software Developer, Software Engineering, and related co-op opportunities for Summer 2027. I would welcome the opportunity to connect with employers, recruiters, and industry professionals.</p>
     <p>
       <a href="mailto:nyohannes06@gmail.com">nyohannes06@gmail.com</a><br>
-      <a href="https://www.linkedin.com/in/naomi-yohannes-ba77a4331">LinkedIn</a><br>
-      <a href="https://github.com/Naomiyoh">GitHub</a><br>
-      <a href="Resume_2026.pdf">Download my resume (PDF)</a>
+      <a href="https://www.linkedin.com/in/naomi-yohannes-ba77a4331">LinkedIn: linkedin.com/in/naomi-yohannes-ba77a4331</a><br>
+      <a href="https://github.com/Naomiyoh">GitHub: github.com/Naomiyoh</a><br>
+      <a href="Resume_2026.pdf">View my resume (PDF)</a>
     </p>
   </section>
 </main>
-
+ 
 <footer>
   <p>Naomi Yohannes, Kitchener, Ontario</p>
 </footer>
-
+ 
 </body>
 </html>
+ 
